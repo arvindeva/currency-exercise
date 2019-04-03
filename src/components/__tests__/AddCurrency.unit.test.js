@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 import AddCurrency from '../AddCurrency';
 
-describe('AddCurrenct tests', () => {
+describe('AddCurrency tests', () => {
   test('renders AddCurrency', () => {
     const wrapper = shallow(<AddCurrency />);
     expect(wrapper).toMatchSnapshot();

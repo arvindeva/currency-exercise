@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Placeholder component renders Placeholder 1`] = `
+<Placeholder
+  fluid={true}
+>
+  <PlaceholderParagraph>
+    <PlaceholderLine />
+    <PlaceholderLine />
+    <PlaceholderLine />
+  </PlaceholderParagraph>
+  <PlaceholderParagraph>
+    <PlaceholderLine />
+    <PlaceholderLine />
+    <PlaceholderLine />
+  </PlaceholderParagraph>
+  <PlaceholderParagraph>
+    <PlaceholderLine />
+    <PlaceholderLine />
+    <PlaceholderLine />
+  </PlaceholderParagraph>
+  <PlaceholderParagraph>
+    <PlaceholderLine />
+    <PlaceholderLine />
+    <PlaceholderLine />
+  </PlaceholderParagraph>
+  <PlaceholderParagraph>
+    <PlaceholderLine />
+    <PlaceholderLine />
+    <PlaceholderLine />
+  </PlaceholderParagraph>
+  <PlaceholderParagraph>
+    <PlaceholderLine />
+    <PlaceholderLine />
+    <PlaceholderLine />
+  </PlaceholderParagraph>
+  <PlaceholderParagraph>
+    <PlaceholderLine />
+    <PlaceholderLine />
+    <PlaceholderLine />
+  </PlaceholderParagraph>
+</Placeholder>
+`;

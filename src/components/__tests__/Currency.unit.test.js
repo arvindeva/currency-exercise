@@ -3,7 +3,7 @@ import { shallow, mount } from 'enzyme';
 
 import Currency from '../Currency';
 
-describe('Currenct component tests', () => {
+describe('Currency component tests', () => {
   test('renders Currency', () => {
     const wrapper = shallow(<Currency />);
     expect(wrapper).toMatchSnapshot();

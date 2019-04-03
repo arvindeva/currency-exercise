@@ -48,10 +48,11 @@ class AddCurrency extends React.Component {
     return (
       <StyledAddCurrency className="ui segments">
         <div className="ui segment">
-          <h1>Add More Currencies</h1>
+          <h1>Add More Currencies!</h1>
         </div>
         <div className="ui segment content">
           <Dropdown
+            className="dropdown"
             placeholder="Select Currency"
             fluid
             selection

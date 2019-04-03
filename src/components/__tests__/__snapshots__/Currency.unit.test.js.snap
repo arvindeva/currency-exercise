@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Currenct component tests renders Currency 1`] = `
+exports[`Currency component tests renders Currency 1`] = `
 <styled.div>
   <div
     className="left"

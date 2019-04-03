@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders BaseCurrency 1`] = `
+exports[`BaseCurrency tests renders BaseCurrency 1`] = `
 <styled.div>
   <p>
     USD - United States Dollars

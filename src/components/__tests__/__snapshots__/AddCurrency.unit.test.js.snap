@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AddCurrenct tests renders AddCurrency 1`] = `
+exports[`AddCurrency tests renders AddCurrency 1`] = `
 <styled.div
   className="ui segments"
 >
@@ -8,7 +8,7 @@ exports[`AddCurrenct tests renders AddCurrency 1`] = `
     className="ui segment"
   >
     <h1>
-      Add More Currencies
+      Add More Currencies!
     </h1>
   </div>
   <div
@@ -17,6 +17,7 @@ exports[`AddCurrenct tests renders AddCurrency 1`] = `
     <Dropdown
       additionLabel="Add "
       additionPosition="top"
+      className="dropdown"
       closeOnBlur={true}
       deburr={false}
       fluid={true}
