@@ -5,6 +5,7 @@ import axios from 'axios';
 import BaseCurrency from './BaseCurrency';
 import CurrencyList from './CurrencyList';
 import AddCurrency from './AddCurrency';
+import LoadingPlaceholder from './LoadingPlaceholder';
 
 const url = 'https://api.exchangeratesapi.io/latest?base=USD';
 
@@ -20,7 +21,7 @@ class App extends React.Component {
     isLoading: false,
     usdInput: 10.0, // set default to 10
     exchangeRates: [],
-    currencyList: ['IDR', 'GBP', 'EUR'] // initial list
+    currencyList: ['IDR', 'GBP', 'EUR'] // default/initial display list
   };
 
   async componentDidMount() {
@@ -28,7 +29,7 @@ class App extends React.Component {
       this.setState({
         isLoading: true
       });
-      const res = await axios.get(url);
+      const res = await axios.get(url); // Fetch the data from API
       console.log(res.data);
       this.setState({
         isLoading: false,
@@ -46,7 +47,6 @@ class App extends React.Component {
   };
 
   onAddClick = value => {
-    console.log(value);
     if (!value) {
       alert('please select a currency to add');
     } else if (this.state.currencyList.indexOf(value) === -1) {
@@ -59,9 +59,9 @@ class App extends React.Component {
   };
 
   onRemoveClick = currency => {
-    this.setState(prevState => ({
+    this.setState({
       currencyList: this.state.currencyList.filter(c => c !== currency)
-    }));
+    });
   };
 
   render() {
@@ -72,7 +72,7 @@ class App extends React.Component {
           onUSDChange={this.onUSDChange}
         />
         {this.state.isLoading ? (
-          <div>Loading</div>
+          <LoadingPlaceholder />
         ) : (
           <CurrencyList
             currencyList={this.state.currencyList}

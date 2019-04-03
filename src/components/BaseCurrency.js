@@ -4,6 +4,14 @@ import styled from 'styled-components';
 const StyledBaseCurrency = styled.div.attrs({
   className: 'ui segment'
 })`
+  .ui .input input {
+    text-align: right;
+  }
+  
+  p {
+    font-style: italic;
+  }
+
   span {
     color: red;
     cursor: pointer;
@@ -28,21 +36,18 @@ const StyledBaseCurrency = styled.div.attrs({
 `;
 
 const BaseCurrency = props => {
-
-  const onUSDChange = e => props.onUSDChange(e);
-
   return (
     <StyledBaseCurrency>
-      <p>USD - United States Dollar</p>
+      <p>USD - United States Dollars</p>
       <div className="header">
         <h1>USD</h1>
         <form className="ui form">
-          <div className="ui huge transparent input">
+          <div className="ui massive transparent input">
             <input
               type="number"
-              placeholder="usd"
+              placeholder="Enter USD"
               value={props.usdInput}
-              onChange={onUSDChange}
+              onChange={e => props.onUSDChange(e)}
             />
           </div>
         </form>

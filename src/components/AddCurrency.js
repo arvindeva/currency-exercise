@@ -44,7 +44,7 @@ class AddCurrency extends React.Component {
         </div>
         <div className="ui segment">
           <button
-            className="ui button"
+            className="ui button teal"
             onClick={() => this.props.onAddClick(this.state.value)}
           >
             Add
