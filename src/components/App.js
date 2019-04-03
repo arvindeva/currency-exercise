@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 
-import Title from './Title';
 import BaseCurrency from './BaseCurrency';
 import CurrencyList from './CurrencyList';
 import AddCurrency from './AddCurrency';
@@ -10,32 +9,37 @@ import AddCurrency from './AddCurrency';
 const url = 'https://api.exchangeratesapi.io/latest?base=USD';
 
 const StyledApp = styled.div`
-  max-width: 600px;
+  max-width: 500px;
   margin: 0 auto;
-  margin-top: 20px;
+  margin-top: 1rem;
+  padding: 1rem;
 `;
 
 class App extends React.Component {
   state = {
     isLoading: false,
-    usdInput: 10.0,
+    usdInput: 10.0, // set default to 10
     exchangeRates: [],
-    currencyList: ['IDR']
+    currencyList: ['IDR', 'GBP', 'EUR'] // initial list
   };
 
   async componentDidMount() {
-    this.setState({
-      isLoading: true
-    });
-    const res = await axios.get(url);
-    console.log(res.data);
-    this.setState({
-      isLoading: false,
-      exchangeRates: res.data.rates
-    });
+    try {
+      this.setState({
+        isLoading: true
+      });
+      const res = await axios.get(url);
+      console.log(res.data);
+      this.setState({
+        isLoading: false,
+        exchangeRates: res.data.rates
+      });
+    } catch (error) {
+      console.log(error);
+    }
   }
 
-  onInputChange = e => {
+  onUSDChange = e => {
     this.setState({
       usdInput: e.target.value
     });
@@ -43,22 +47,29 @@ class App extends React.Component {
 
   onAddClick = value => {
     console.log(value);
-    if (this.state.currencyList.indexOf(value) === -1) {
+    if (!value) {
+      alert('please select a currency to add');
+    } else if (this.state.currencyList.indexOf(value) === -1) {
       this.setState(prevState => ({
         currencyList: [...prevState.currencyList, value]
       }));
     } else {
-      alert('currency is already on the list');
+      alert('The currency you selected is already on the list');
     }
+  };
+
+  onRemoveClick = currency => {
+    this.setState(prevState => ({
+      currencyList: this.state.currencyList.filter(c => c !== currency)
+    }));
   };
 
   render() {
     return (
       <StyledApp>
-        <Title />
         <BaseCurrency
           usdInput={this.state.usdInput}
-          onInputChange={this.onInputChange}
+          onUSDChange={this.onUSDChange}
         />
         {this.state.isLoading ? (
           <div>Loading</div>
@@ -67,6 +78,7 @@ class App extends React.Component {
             currencyList={this.state.currencyList}
             exchangeRates={this.state.exchangeRates}
             usdInput={this.state.usdInput}
+            onRemoveClick={this.onRemoveClick}
           />
         )}
         <AddCurrency onAddClick={this.onAddClick} />

@@ -1,15 +1,17 @@
 import React from 'react';
 import Currency from './Currency';
 
-const CurrencyList = ({ currencyList, exchangeRates, usdInput }) => {
+const CurrencyList = props => {
+
   return (
     <div>
-      {currencyList.map(currency => (
+      {props.currencyList.map(currency => (
         <Currency
           key={currency}
           currency={currency}
-          exchangeRate={exchangeRates[currency]}
-          usdInput={usdInput}
+          exchangeRate={props.exchangeRates[currency]}
+          usdInput={props.usdInput}
+          onRemoveClick={props.onRemoveClick}
         />
       ))}
     </div>

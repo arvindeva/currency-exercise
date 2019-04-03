@@ -5,8 +5,10 @@ class AddCurrency extends React.Component {
   state = {
     value: ''
   };
+
   supportedCurrencies = [
     'USD',
+    'EUR',
     'CAD',
     'IDR',
     'GBP',
@@ -26,22 +28,28 @@ class AddCurrency extends React.Component {
 
   render() {
     return (
-      <div className="ui segment">
-        <h1>Add Currency!</h1>
-        <Dropdown
-          placeholder="Select Currency"
-          fluid
-          selection
-          options={this.options}
-          onChange={this.handleChange}
-          value={this.state.value}
-        />
-        <button
-          className="ui button"
-          onClick={() => this.props.onAddClick(this.state.value)}
-        >
-          Add
-        </button>
+      <div className="ui segments">
+        <div className="ui segment">
+          <h1>Add Currency!</h1>
+        </div>
+        <div className="ui segment">
+          <Dropdown
+            placeholder="Select Currency"
+            fluid
+            selection
+            options={this.options}
+            onChange={this.handleChange}
+            value={this.state.value}
+          />
+        </div>
+        <div className="ui segment">
+          <button
+            className="ui button"
+            onClick={() => this.props.onAddClick(this.state.value)}
+          >
+            Add
+          </button>
+        </div>
       </div>
     );
   }

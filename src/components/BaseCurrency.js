@@ -7,68 +7,48 @@ const StyledBaseCurrency = styled.div.attrs({
   span {
     color: red;
     cursor: pointer;
+    text-align: center;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h1 {
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+  }
+
+  .edit {
+    display: flex;
+    justify-content: flex-end;
   }
 `;
 
-class BaseCurrency extends React.Component {
-  state = {
-    showInputForm: false
-  };
+const BaseCurrency = props => {
 
-  onEditClick = () => {
-    this.setState({
-      showInputForm: true
-    });
-  };
+  const onUSDChange = e => props.onUSDChange(e);
 
-  onCloseClick = () => {
-    this.setState({
-      showInputForm: false
-    });
-  };
-
-  onInputChange = e => {
-    console.log(e.target.value);
-    this.props.onInputChange(e);
-  };
-
-  onSubmit = e => {
-    e.preventDefault();
-    this.setState({
-      showInputForm: false
-    });
-  };
-
-  render() {
-    return (
-      <StyledBaseCurrency>
+  return (
+    <StyledBaseCurrency>
+      <p>USD - United States Dollar</p>
+      <div className="header">
         <h1>USD</h1>
-        <p>
-          {this.props.usdInput} -{' '}
-          {!this.state.showInputForm ? (
-            <span onClick={this.onEditClick}>Edit</span>
-          ) : (
-            <span onClick={this.onCloseClick}>Close</span>
-          )}
-        </p>
-        {this.state.showInputForm && (
-          <form className="ui form" onSubmit={this.onSubmit}>
-            <div className="ui labeled input">
-              <label htmlFor="amount" className="ui label">
-                $
-              </label>
-              <input
-                type="number"
-                placeholder="usd"
-                defaultValue={this.props.usdInput}
-                onChange={this.onInputChange}
-              />
-            </div>
-          </form>
-        )}
-      </StyledBaseCurrency>
-    );
-  }
-}
+        <form className="ui form">
+          <div className="ui huge transparent input">
+            <input
+              type="number"
+              placeholder="usd"
+              value={props.usdInput}
+              onChange={onUSDChange}
+            />
+          </div>
+        </form>
+      </div>
+    </StyledBaseCurrency>
+  );
+};
 
 export default BaseCurrency;
