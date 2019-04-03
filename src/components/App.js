@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import axios from 'axios';
 
 import BaseCurrency from './BaseCurrency';
@@ -8,6 +8,12 @@ import AddCurrency from './AddCurrency';
 import LoadingPlaceholder from './LoadingPlaceholder';
 
 const url = 'https://api.exchangeratesapi.io/latest?base=USD';
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    background: #e5e5e5;
+  }
+`;
 
 const StyledApp = styled.div`
   max-width: 500px;
@@ -30,7 +36,6 @@ class App extends React.Component {
         isLoading: true
       });
       const res = await axios.get(url); // Fetch the data from API
-      console.log(res.data);
       this.setState({
         isLoading: false,
         exchangeRates: res.data.rates
@@ -46,12 +51,12 @@ class App extends React.Component {
     });
   };
 
-  onAddClick = value => {
-    if (!value) {
+  onAddClick = selectedCurrency => {
+    if (!selectedCurrency) {
       alert('please select a currency to add');
-    } else if (this.state.currencyList.indexOf(value) === -1) {
+    } else if (this.state.currencyList.indexOf(selectedCurrency) === -1) {
       this.setState(prevState => ({
-        currencyList: [...prevState.currencyList, value]
+        currencyList: [...prevState.currencyList, selectedCurrency]
       }));
     } else {
       alert('The currency you selected is already on the list');
@@ -66,23 +71,26 @@ class App extends React.Component {
 
   render() {
     return (
-      <StyledApp>
-        <BaseCurrency
-          usdInput={this.state.usdInput}
-          onUSDChange={this.onUSDChange}
-        />
-        {this.state.isLoading ? (
-          <LoadingPlaceholder />
-        ) : (
-          <CurrencyList
-            currencyList={this.state.currencyList}
-            exchangeRates={this.state.exchangeRates}
+      <>
+        <GlobalStyle />
+        <StyledApp>
+          <BaseCurrency
             usdInput={this.state.usdInput}
-            onRemoveClick={this.onRemoveClick}
+            onUSDChange={this.onUSDChange}
           />
-        )}
-        <AddCurrency onAddClick={this.onAddClick} />
-      </StyledApp>
+          {this.state.isLoading ? (
+            <LoadingPlaceholder />
+          ) : (
+            <CurrencyList
+              currencyList={this.state.currencyList}
+              exchangeRates={this.state.exchangeRates}
+              usdInput={this.state.usdInput}
+              onRemoveClick={this.onRemoveClick}
+            />
+          )}
+          <AddCurrency onAddClick={this.onAddClick} />
+        </StyledApp>
+      </>
     );
   }
 }

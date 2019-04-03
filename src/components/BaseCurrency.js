@@ -6,8 +6,16 @@ const StyledBaseCurrency = styled.div.attrs({
 })`
   .ui .input input {
     text-align: right;
+    font-size: 36px;
+    font-weight: 600;
   }
-  
+
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
   p {
     font-style: italic;
   }
@@ -27,11 +35,6 @@ const StyledBaseCurrency = styled.div.attrs({
       margin-top: 0px;
       margin-bottom: 0px;
     }
-  }
-
-  .edit {
-    display: flex;
-    justify-content: flex-end;
   }
 `;
 

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Icon } from 'semantic-ui-react';
 
-import currencyNames from '../currencyNames';
+import currencyNames from '../lib/currencyNames';
 
 const StyledCurrency = styled.div.attrs({
   className: 'ui segment'
@@ -10,6 +10,7 @@ const StyledCurrency = styled.div.attrs({
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   .left {
     width: 100%;
     .top {
