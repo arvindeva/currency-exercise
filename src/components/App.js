@@ -30,6 +30,7 @@ class App extends React.Component {
     currencyList: ['IDR', 'GBP', 'EUR'] // default/initial display list
   };
 
+  // Get data from API on mount
   async componentDidMount() {
     try {
       this.setState({
@@ -42,6 +43,9 @@ class App extends React.Component {
       });
     } catch (error) {
       console.log(error);
+      this.setState({
+        isLoading: false
+      })
     }
   }
 
@@ -51,10 +55,13 @@ class App extends React.Component {
     });
   };
 
+  // Add the selected currency
   onAddClick = selectedCurrency => {
+    // check if a currency is selected
     if (!selectedCurrency) {
       alert('please select a currency to add');
     } else if (this.state.currencyList.indexOf(selectedCurrency) === -1) {
+      // add selected currency to the list if it's not on the list yet
       this.setState(prevState => ({
         currencyList: [...prevState.currencyList, selectedCurrency]
       }));
@@ -63,6 +70,7 @@ class App extends React.Component {
     }
   };
 
+  // Remove specified currency from the list of displayed currencies
   onRemoveClick = currency => {
     this.setState({
       currencyList: this.state.currencyList.filter(c => c !== currency)
