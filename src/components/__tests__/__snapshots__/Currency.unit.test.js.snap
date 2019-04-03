@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Currenct component tests renders Currency 1`] = `
+<styled.div>
+  <div
+    className="left"
+  >
+    <div
+      className="top"
+    >
+      <div>
+        <h1 />
+      </div>
+      <div>
+        <h1>
+           
+          NaN
+        </h1>
+      </div>
+    </div>
+    <div
+      className="middle"
+    >
+      <p>
+         - 
+      </p>
+    </div>
+    <div
+      className="bottom"
+    >
+      <p>
+        1 USD =
+         
+         
+      </p>
+    </div>
+  </div>
+  <div
+    className="right"
+  >
+    <Icon
+      as="i"
+      className="minus"
+      name="minus square outline"
+      onClick={[Function]}
+      size="big"
+    />
+  </div>
+</styled.div>
+`;

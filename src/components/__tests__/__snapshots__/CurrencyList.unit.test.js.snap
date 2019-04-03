@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders CurrencyList renders CurrencyList with actual currencies and actual exchange rates 1`] = `
+<div>
+  <Currency
+    currency="CAD"
+    exchangeRate={1.3320535714}
+    key="CAD"
+  />
+  <Currency
+    currency="CHF"
+    exchangeRate={0.9995535714}
+    key="CHF"
+  />
+  <Currency
+    currency="IDR"
+    exchangeRate={14220}
+    key="IDR"
+  />
+</div>
+`;
+
+exports[`renders CurrencyList renders CurrencyList with actual currencies and empty exchange rates 1`] = `
+<div>
+  <Currency
+    currency="USD"
+    key="USD"
+  />
+  <Currency
+    currency="GBP"
+    key="GBP"
+  />
+  <Currency
+    currency="IDR"
+    key="IDR"
+  />
+</div>
+`;
+
+exports[`renders CurrencyList renders CurrencyList with empty list 1`] = `<div />`;

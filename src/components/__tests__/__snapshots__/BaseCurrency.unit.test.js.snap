@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders BaseCurrency 1`] = `
+<styled.div>
+  <p>
+    USD - United States Dollars
+  </p>
+  <div
+    className="header"
+  >
+    <h1>
+      USD
+    </h1>
+    <form
+      className="ui form"
+    >
+      <div
+        className="ui massive transparent input"
+      >
+        <input
+          onChange={[Function]}
+          placeholder="Enter USD"
+          type="number"
+        />
+      </div>
+    </form>
+  </div>
+</styled.div>
+`;

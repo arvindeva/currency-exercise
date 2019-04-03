@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Icon } from 'semantic-ui-react';
 
 import currencyNames from '../lib/currencyNames';
+import { formatMoney } from '../lib/formatMoney';
 
 const StyledCurrency = styled.div.attrs({
   className: 'ui segment'
@@ -34,11 +35,6 @@ const StyledCurrency = styled.div.attrs({
 `;
 
 const Currency = props => {
-  // Formatting to add commas every 3 digits.
-  const formatMoney = money => {
-    return money.toFixed(2).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1,');
-  };
-
   return (
     <StyledCurrency>
       <div className="left">

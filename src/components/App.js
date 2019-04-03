@@ -25,7 +25,7 @@ const StyledApp = styled.div`
 class App extends React.Component {
   state = {
     isLoading: false,
-    usdInput: 10.0, // set default to 10
+    usdInput: 10.00.toFixed(2), // set default to 10.00!
     exchangeRates: [],
     currencyList: ['IDR', 'GBP', 'EUR'] // default/initial display list
   };

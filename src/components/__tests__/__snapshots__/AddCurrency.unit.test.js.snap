@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddCurrenct tests renders AddCurrency 1`] = `
+<styled.div
+  className="ui segments"
+>
+  <div
+    className="ui segment"
+  >
+    <h1>
+      Add More Currencies
+    </h1>
+  </div>
+  <div
+    className="ui segment content"
+  >
+    <Dropdown
+      additionLabel="Add "
+      additionPosition="top"
+      closeOnBlur={true}
+      deburr={false}
+      fluid={true}
+      icon="dropdown"
+      minCharacters={1}
+      noResultsMessage="No results found."
+      onChange={[Function]}
+      openOnFocus={true}
+      options={
+        Array [
+          Object {
+            "key": "USD",
+            "text": "USD - United States Dollars",
+            "value": "USD",
+          },
+          Object {
+            "key": "EUR",
+            "text": "EUR - European Euro",
+            "value": "EUR",
+          },
+          Object {
+            "key": "CAD",
+            "text": "CAD - Canadian Dollars",
+            "value": "CAD",
+          },
+          Object {
+            "key": "IDR",
+            "text": "IDR - Indonesian Rupiah",
+            "value": "IDR",
+          },
+          Object {
+            "key": "GBP",
+            "text": "GBP - Great Britain Pounds",
+            "value": "GBP",
+          },
+          Object {
+            "key": "CHF",
+            "text": "CHF - Swiss Franc",
+            "value": "CHF",
+          },
+          Object {
+            "key": "SGD",
+            "text": "SGD - Singapore Dollars",
+            "value": "SGD",
+          },
+          Object {
+            "key": "INR",
+            "text": "INR - Indian Rupee",
+            "value": "INR",
+          },
+          Object {
+            "key": "MYR",
+            "text": "MYR - Malaysian Ringgit",
+            "value": "MYR",
+          },
+          Object {
+            "key": "JPY",
+            "text": "JPY - Japanese Yen",
+            "value": "JPY",
+          },
+          Object {
+            "key": "KRW",
+            "text": "KRW - South Korean Won",
+            "value": "KRW",
+          },
+        ]
+      }
+      placeholder="Select Currency"
+      renderLabel={[Function]}
+      searchInput="text"
+      selectOnBlur={true}
+      selectOnNavigation={true}
+      selection={true}
+      value=""
+      wrapSelection={true}
+    />
+    <button
+      className="ui button basic black"
+      onClick={[Function]}
+    >
+      Add
+    </button>
+  </div>
+</styled.div>
+`;
