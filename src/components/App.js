@@ -20,7 +20,7 @@ class App extends React.Component {
     isLoading: false,
     usdInput: 10.0,
     exchangeRates: [],
-    currencyList: ['IDR', 'EUR', 'GBP']
+    currencyList: ['IDR']
   };
 
   async componentDidMount() {
@@ -41,6 +41,17 @@ class App extends React.Component {
     });
   };
 
+  onAddClick = value => {
+    console.log(value);
+    if (this.state.currencyList.indexOf(value) === -1) {
+      this.setState(prevState => ({
+        currencyList: [...prevState.currencyList, value]
+      }));
+    } else {
+      alert('currency is already on the list');
+    }
+  };
+
   render() {
     return (
       <StyledApp>
@@ -58,7 +69,7 @@ class App extends React.Component {
             usdInput={this.state.usdInput}
           />
         )}
-        <AddCurrency />
+        <AddCurrency onAddClick={this.onAddClick} />
       </StyledApp>
     );
   }
